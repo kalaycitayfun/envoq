@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>mainEnvoQsTobaccos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&family=New+Rocker&display=swap" rel="stylesheet">
+    <link rel="preload" href="AnglicanText.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      body {
+        background-color: rgb(0, 0, 0);  
+      }
+      .container {
+        position: relative;
+      }
+      #envoqs-logo {
+        max-width: 30%;
+        height: auto;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border-bottom: 1px solid red; 
+      }
+
+      #background-gif{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      #mainFooter{
+        position: absolute;
+        bottom: 0; 
+        left: 0;
+        right: 0;
+        text-align: center ;
+        color: white;
+        background-color: transparent;
+        font-family: 'AnglicanText', san  s-serif;
+        font-size: 30px;
+      } 
+
+    #btnCulture {
+       position: absolute;
+       top: 30px;
+       right: 600px;
+       background-color: transparent;
+       border: none;
+       color: white;
+       font-size: 20px;
+    }
+
+    #btnProducts {
+      position: absolute;
+      top: 30px;
+      right: 450px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    #btnBrands{
+      position: absolute;
+      top: 30px;
+      right: 325px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    #btnContacts{
+      position: absolute;
+      top: 30px;
+      right: 165px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+    
+    #btnProductsSubCigar{
+      position: absolute;
+      top: 65px;
+      right: 450px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    #btnProductsSubSmoke{
+      position: absolute;
+      top: 100px;
+      right: 450px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    #frameTopSellerMonth{
+      width: 1500px;
+      height: 350px;
+      background-color: black;
+      opacity: 0.5;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -230%);
+}
+    }
+
+    </style>
+    <style>
+      @font-face {
+        font-family: 'AnglicanText';
+        src: url('C:\\Users\\kalay\\OneDrive\\Masaüstü\\envoq\\engraverMain\\AnglicanText.woff2') format('woff2'),
+             url('C:\\Users\\kalay\\OneDrive\\Masaüstü\\envoq\\engraverMain\\AnglicanText.woff') format('woff');
+        font-weight: normal;
+        font-style: normal; 
+        font-display: swap;
+      } 
+    </style>
+<script>
+  angular.module('myApp', [])
+    .controller('btnProductsController', function($scope) {
+      $scope.showSubButtons = false;
+      $scope.toggleSubButtons = function() {
+        $scope.showSubButtons = !$scope.showSubButtons;
+      };
+    });
+</script>
+</head>
+<body ng-app="myApp">
+    <div class="container">
+      <img src="https://i.pinimg.com/originals/15/3c/10/153c10f624be455b390339429733e7ec.gif" alt="ENVOQ" id="background-gif" width="100%" height="100%" style="border: 1px solid #000000;">
+      <img src="C:\Users\kalay\OneDrive\Masaüstü\envoq\envoqsLogomain.png" alt="Envoqs" id="envoqs-logo">
+      <div id="frameTopSellerMonth" class="rectangle"></div>
+      <p id="mainFooter">Bir purodaki duman, güçlü ve kararlı duruşun sembolüdür.</p>
+      <div class="menu" ng-controller="btnProductsController">
+        <button id="btnCulture" class="button">CULTURE</button>
+        <div>
+          <button id="btnProducts" class="button" ng-mouseenter="toggleSubButtons()">PRODUCTS</button>
+          <div class="sub-button" ng-show="showSubButtons" ng-mouseleave="toggleSubButtons()">
+            <button id="btnProductsSubCigar" class="sub-button" ng-mouseenter="toggleSubButtons()">CIGAR</button>
+            <button id="btnProductsSubSmoke" class="sub-button" ng-mouseenter="toggleSubButtons()">SMOKE</button>
+          </div>
+        </div>
+        <button id="btnBrands" class="button">BRANDS</button>
+        <button id="btnContacts" class="button">CONTACTS</button>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'AnglicanText';
+    src: url('subset-AnglicanText.woff2') format('woff2'),
+        url('subset-AnglicanText.woff') format('woff'),
+        url('subset-AnglicanText.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

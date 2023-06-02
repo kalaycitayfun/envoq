@@ -1,0 +1,4 @@
+angular.module('btnProductsSubs','btnProductsSubCigar','btnProductsSubSmoke', [])
+  .controller('btnProductsController', function($scope) {
+    $scope.showSubButtons = false;
+  });
